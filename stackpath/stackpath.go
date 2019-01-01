@@ -22,8 +22,6 @@ func NewDNSProvider(credentials ...string) (caddytls.ChallengeProvider, error) {
 	switch len(credentials) {
 	case 0:
 		return stackpath.NewDNSProvider()
-	case 3:
-		return stackpath.NewDNSProviderCredentials(credentials[0], credentials[1], credentials[2])
 	default:
 		return nil, errors.New("invalid credentials length")
 	}
